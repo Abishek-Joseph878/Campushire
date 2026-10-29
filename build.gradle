@@ -1,0 +1,44 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.1.0'
+}
+
+group = 'com.campushire'
+version = '1.0.0'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+// javafx.controls includes the chart classes (javafx.scene.chart package)
+javafx {
+    version = '21.0.2'
+    modules = ['javafx.controls', 'javafx.fxml', 'javafx.graphics', 'javafx.base']
+}
+
+dependencies {
+    implementation 'org.xerial:sqlite-jdbc:3.45.3.0'
+    implementation 'com.google.code.gson:gson:2.10.1'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+application {
+    mainModule = 'com.campushire'
+    mainClass = 'com.campushire.app.CampusHireApp'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+compileJava {
+    options.encoding = 'UTF-8'
+}

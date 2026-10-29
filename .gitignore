@@ -1,0 +1,9 @@
+.gradle/
+build/
+out/
+*.class
+*.db
+*.db-shm
+*.db-wal
+*.jar
+!gradle/wrapper/gradle-wrapper.jar
